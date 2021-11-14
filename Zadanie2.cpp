@@ -2,7 +2,7 @@
 #include "iostream"
 #include <clocale>
 
-#define MAX 8;
+#define MAX 8
 using namespace std;
 
 struct SetOfStacks
@@ -64,7 +64,7 @@ struct SetOfStacks
 	////
 	void push(int d) {
 		nodeCount++;
-		if (nodeCount <= 8) {
+		if (nodeCount <= MAX) {
 			a.Push(d);
 		}
 		
@@ -75,7 +75,7 @@ struct SetOfStacks
 	////
 	int pop() {
 		nodeCount--;
-		if (nodeCount >= 8) {
+		if (nodeCount >= MAX) {
 			return b.Pop();
 		}
 		else {
@@ -87,7 +87,7 @@ struct SetOfStacks
 int main()
 {
 	SetOfStacks st;
-	for (int i = 1; i <= 16; i++) //добавляем 1,2,...,16
+	for (int i = 1; i <= MAX*2; i++) //добавляем 1,2,...,16
 	{
 		st.push(i);
 	}
